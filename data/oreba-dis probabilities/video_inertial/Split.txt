@@ -1,0 +1,45 @@
+training, validation and test split for deep learning CNN fusion models for OREBA-DIS:
+training set participant ids:
+1004_1
+1010_1
+1015_1
+1025_1
+1030_1
+1036_1
+1048_1
+1054_1
+1060_1
+1075_1
+1081_1
+1086_1
+1096_1
+1101_1
+1107_1
+
+validation set participant Ids:
+1020_1
+1043_1
+1068_1
+1091_1
+1112_1
+
+test set participant Ids:
+1005_1
+1011_1
+1016_1
+1021_1
+1026_1
+1031_1
+1037_1
+1044_1
+1050_1
+1055_1
+1061_1
+1076_1
+1082_1
+1087_1
+1092_1
+1097_1
+1102_1
+1108_1
+1113_1
