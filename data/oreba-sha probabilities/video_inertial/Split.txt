@@ -1,0 +1,45 @@
+training, validation and test split for deep learning CNN fusion models for OREBA-SHA:
+training set participant ids:
+1025_2
+1036_2
+1043_2
+1075_2
+2003_2
+2010_2
+2024_2
+2030_2
+2036_2
+2050_2
+2055_2
+2063_2
+2073_2
+2079_2
+2084_2
+
+validation set participant Ids:
+1068_2
+2018_2
+2045_2
+2068_2
+2094_2
+
+test set participant Ids:
+1037_2
+2004_2
+2005_2
+2011_2
+2013_2
+2019_2
+2020_2
+2025_2
+2026_2
+2032_2
+2039_2
+2046_2
+2051_2
+2056_2
+2069_2
+2075_2
+2080_2
+2085_2
+2090_2
