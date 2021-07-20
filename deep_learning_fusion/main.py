@@ -5,8 +5,6 @@ import numpy as np
 import tensorflow as tf
 import math
 import best_checkpoint_exporter
-import resnet_cnn
-import resnet_cnn_lstm
 import small_cnn
 import cnn_lstm
 import cnn_gru
@@ -39,7 +37,7 @@ absl.app.flags.DEFINE_string(
     name='f_mode', default='',
     help='Select the mode of the proposed fusion model')
 absl.app.flags.DEFINE_enum(
-    name='model', default='small_cnn', enum_values=['resnet_cnn', 'resnet_cnn_lstm', 'small_cnn', 'cnn_lstm', 'cnn_gru', 'cnn_blstm', 'cnn_rnn'],
+    name='model', default='small_cnn', enum_values=['small_cnn', 'cnn_lstm', 'cnn_gru', 'cnn_blstm', 'cnn_rnn'],
     help='Select the model')
 absl.app.flags.DEFINE_string(
     name='sub_mode', default='',
@@ -210,15 +208,6 @@ def model_fn(features, labels, mode, params):
         sub_mode_dict = dict(item.split(':') for item in sub_mode.split(';'))
         depth = int(sub_mode_dict['d']) if 'd' in sub_mode_dict else 2
         FLAGS.use_sequence_loss = False if depth == 0 else True
-    elif FLAGS.model == 'resnet_cnn':
-        if FLAGS.mode == "train_and_evaluate":
-            assert not FLAGS.use_sequence_loss, "Cannot use sequence loss with this model"
-        model = resnet_cnn.Model(params)
-    elif FLAGS.model == 'resnet_cnn_lstm':
-        if FLAGS.mode == "train_and_evaluate":
-            assert FLAGS.use_sequence_loss, "Need sequence loss for this model"
-            assert FLAGS.seq_pool == 16, "seq_pool should be 16"
-        model = resnet_cnn_lstm.Model(params)
     elif FLAGS.model == 'small_cnn':
         if FLAGS.mode == "train_and_evaluate":
             assert not FLAGS.use_sequence_loss, "Cannot use sequence loss with this model"
